@@ -9,18 +9,30 @@ const Navbar: React.FC = () => {
             <span className="text-beauty-accent">Bella</span>Beauty
           </h1>
         </div>
-        
+
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="#home" className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium">
+          <a
+            href="#home"
+            className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium"
+          >
             Home
           </a>
-          <a href="#about" className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium">
+          <a
+            href="#about"
+            className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium"
+          >
             About us
           </a>
-          <a href="#services" className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium">
+          <a
+            href="#services"
+            className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium"
+          >
             Services
           </a>
-          <a href="#our_work" className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium">
+          <a
+            href="#our_work"
+            className="text-beauty-dark hover:text-beauty-accent transition-colors font-medium"
+          >
             Our work
           </a>
         </div>
