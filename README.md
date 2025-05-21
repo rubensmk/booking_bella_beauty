@@ -5,6 +5,7 @@ This is a multi-tenant booking system MVP for beauty centers. Each center has it
 ## 🚀 Live Demo
 
 🔗 [Live app on Vercel - Bella Beauty](https://booking-bella-beauty.vercel.app/bella_beauty)
+🔗 [Live app on Vercel - Glam Zone](https://booking-bella-beauty.vercel.app/glam_zone)
 
 ---
 
