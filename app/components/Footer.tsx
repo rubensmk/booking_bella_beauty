@@ -1,18 +1,28 @@
 import React from "react";
+import Logo from "./Logo";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  footer_details: string;
+  address: string;
+  phone: string;
+  email: string;
+  name: string;
+}
+
+export default function Footer({
+  name,
+  footer_details,
+  address,
+  phone,
+  email,
+}: FooterProps) {
   return (
     <footer id="contact" className="bg-beauty-dark text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl  font-semibold mb-4">
-              <span className="text-beauty-accent">Bella</span>Beauty
-            </h3>
-            <p className="text-white/70">
-              Premium beauty services to enhance your natural beauty and boost
-              your confidence.
-            </p>
+            <Logo name={name} />
+            <p className="text-white/70">{footer_details}</p>
             <div className="flex space-x-4 pt-2">
               <a
                 href="#"
@@ -92,9 +102,7 @@ const Footer: React.FC = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <span className="text-white/70">
-                  123 Beauty Street, Spa City, SC 12345
-                </span>
+                <span className="text-white/70">{address}</span>
               </li>
               <li className="flex items-start space-x-3">
                 <svg
@@ -111,7 +119,7 @@ const Footer: React.FC = () => {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <span className="text-white/70">(555) 123-4567</span>
+                <span className="text-white/70">{phone}</span>
               </li>
               <li className="flex items-start space-x-3">
                 <svg
@@ -129,7 +137,7 @@ const Footer: React.FC = () => {
                   <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                <span className="text-white/70">info@bellabeauty.com</span>
+                <span className="text-white/70">{email}</span>
               </li>
               <li className="flex items-start space-x-3">
                 <svg
@@ -156,11 +164,9 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
-          <p>© 2023 BellaBeauty Spa & Salon. All rights reserved.</p>
+          <p>© 2023 All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

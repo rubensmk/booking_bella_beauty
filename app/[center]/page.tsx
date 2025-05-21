@@ -4,7 +4,8 @@ import Gallery from "../components/Gallery";
 import Hero from "../components/Hero";
 import Navbar from "../components/NavBar";
 import ServiceListSection from "../components/ServiceListSection";
-import { Service } from "../types/service";
+import { getCenterInfo } from "../lib/center_info";
+import { getServices } from "../lib/services";
 
 interface CenterPageProps {
   params: {
@@ -12,34 +13,28 @@ interface CenterPageProps {
   };
 }
 
-async function getServices(center: string): Promise<Service[]> {
-  const baseUrl = process.env.API_BASE_URL;
-  const res = await fetch(`${baseUrl}/api/services?center=${center}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Failed to fetch services");
-  return res.json();
-}
-
 export default async function CenterPage({ params }: CenterPageProps) {
   const services = await getServices(params.center);
+  const centerInfo = await getCenterInfo(params.center);
 
   return (
     <div id="home" className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <About />
+      <Navbar name={centerInfo.name} />
+
+      <Hero
+        hero={centerInfo.hero}
+        hero_description={centerInfo.hero_description}
+      />
+      <About about={centerInfo.about} />
 
       <section id="services" className="py-16 bg-beauty-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-serif font-semibold mb-4 text-beauty-dark">
-              Our Hair Styling Services
+              Our Services
             </h2>
             <p className="text-beauty-dark/70 max-w-2xl mx-auto">
-              We offer a wide range of hair styling services to meet all your
-              beauty needs. All services include consultation, shampoo, and
-              style.
+              {centerInfo.services_description}
             </p>
           </div>
 
@@ -56,7 +51,13 @@ export default async function CenterPage({ params }: CenterPageProps) {
       </section>
 
       <Gallery />
-      <Footer />
+      <Footer
+        name={centerInfo.name}
+        address={centerInfo.address}
+        footer_details={centerInfo.footer_details}
+        email={centerInfo.email}
+        phone={centerInfo.phone}
+      />
     </div>
   );
 }

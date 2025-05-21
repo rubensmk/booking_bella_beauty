@@ -55,6 +55,56 @@ export async function GET(request: Request) {
         price: 250,
       },
     ],
+    glam_zone: [
+      {
+        id: "1",
+        name: "Glamorous Makeover",
+        description:
+          "A full-face professional makeup session for special events or photography sessions.",
+        duration: "60 minutes",
+        price: 95,
+      },
+      {
+        id: "2",
+        name: "Luxury Hair Spa",
+        description:
+          "Relaxing scalp massage, nourishing treatment, and style — total hair rejuvenation.",
+        duration: "1 hour",
+        price: 110,
+      },
+      {
+        id: "3",
+        name: "Balayage & Shine",
+        description:
+          "Sun-kissed balayage with a gloss finish to enhance natural tones and shine.",
+        duration: "2.5-3 hours",
+        price: 160,
+      },
+      {
+        id: "4",
+        name: "Red Carpet Styling",
+        description:
+          "Elegant and bold styling inspired by Hollywood glam. Perfect for events.",
+        duration: "1-1.5 hours",
+        price: 130,
+      },
+      {
+        id: "5",
+        name: "Keratin Smoothing",
+        description:
+          "Eliminate frizz and enhance shine with our professional keratin treatment.",
+        duration: "2-3 hours",
+        price: 200,
+      },
+      {
+        id: "6",
+        name: "Volume Lash Extensions",
+        description:
+          "Dramatic volume lash set applied with precision for a bold, beautiful look.",
+        duration: "90-120 minutes",
+        price: 180,
+      },
+    ],
   };
 
   await new Promise((resolve) => setTimeout(resolve, 1500));

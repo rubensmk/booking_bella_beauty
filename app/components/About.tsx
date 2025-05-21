@@ -1,7 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const About: React.FC = () => {
+interface AboutProps {
+  about: string;
+}
+
+export default function About({ about }: AboutProps) {
   return (
     <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -10,12 +14,7 @@ const About: React.FC = () => {
             <h2 className="text-3xl  font-semibold mb-6 text-beauty-dark">
               Our Hair Styling Approach
             </h2>
-            <p className="text-beauty-dark/80 mb-4">
-              At Bella Beauty, we believe that great hair can transform your
-              confidence and overall appearance. Our team of skilled stylists
-              are passionate about creating personalized looks that enhance your
-              natural beauty.
-            </p>
+            <p className="text-beauty-dark/80 mb-4">{about}</p>
             <p className="text-beauty-dark/80 mb-4">
               We begin each appointment with a thorough consultation to
               understand your hair goals, lifestyle, and maintenance
@@ -127,6 +126,4 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default About;
+}

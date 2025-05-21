@@ -1,13 +1,16 @@
 import React from "react";
+import Logo from "./Logo";
 
-const Navbar: React.FC = () => {
+interface NavBarProps {
+  name: string;
+}
+
+export default function Navbar({ name }: NavBarProps) {
   return (
     <nav className="w-full py-4 bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-beauty-primary/30">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-2xl  text-beauty-dark font-semibold">
-            <span className="text-beauty-accent">Bella</span>Beauty
-          </h1>
+          <Logo name={name} variant="dark" />
         </div>
 
         <div className="hidden md:flex space-x-6 items-center">
@@ -39,6 +42,4 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
