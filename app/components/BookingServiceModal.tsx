@@ -41,12 +41,14 @@ export default function BookingModal({
 
     if (!form.name || !form.email || !form.date || !form.time) {
       setError("Please fill out all fields.");
+      setIsLoading(false);
       return;
     }
 
     const selectedDateTime = new Date(`${form.date}T${form.time}`);
     if (isNaN(selectedDateTime.getTime()) || selectedDateTime <= new Date()) {
       setError("Please choose a valid date and time in the future.");
+      setIsLoading(false);
       return;
     }
 
@@ -61,6 +63,7 @@ export default function BookingModal({
     setSuccess(false);
     setError(null);
     onOpenChange(false);
+    setIsLoading(false);
   };
 
   if (!open) return null;
