@@ -55,15 +55,6 @@ export async function GET(request: Request) {
         price: 250,
       },
     ],
-    glam_zone: [
-      {
-        id: "1",
-        name: "Color Treatment",
-        description: "Balayage and full color for a vibrant look.",
-        duration: "2 hours",
-        price: 150,
-      },
-    ],
   };
 
   await new Promise((resolve) => setTimeout(resolve, 1500));
