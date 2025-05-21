@@ -27,6 +27,7 @@ export default function BookingModal({
     time: "",
   });
   const [success, setSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +37,7 @@ export default function BookingModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (!form.name || !form.email || !form.date || !form.time) {
       setError("Please fill out all fields.");
@@ -48,7 +50,10 @@ export default function BookingModal({
       return;
     }
 
-    setTimeout(() => setSuccess(true), 1000);
+    setTimeout(() => {
+      setIsLoading(false);
+      setSuccess(true);
+    }, 1000);
   };
 
   const handleClose = () => {
@@ -149,9 +154,13 @@ export default function BookingModal({
 
             <button
               type="submit"
-              className="w-full bg-beauty-accent hover:bg-beauty-accent/90 text-white py-2 rounded transition-colors"
+              disabled={isLoading}
+              className="w-full bg-beauty-accent hover:bg-beauty-accent/90 text-white py-2 rounded transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
             >
-              Confirm Booking
+              {isLoading && (
+                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              )}
+              {isLoading ? "Loading..." : "Confirm Booking"}
             </button>
           </form>
         )}
