@@ -9,6 +9,8 @@ export async function GET(request: Request) {
       id: "1",
       name: "Bella Beauty",
       hero: "Expert Hair Styling Services",
+      image:
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 ",
       hero_description:
         "Transform your look with our premium hair styling services. Our expert stylists combine artistry and technique to create the perfect style that matches your personality and lifestyle.",
       services_description:
@@ -25,6 +27,8 @@ export async function GET(request: Request) {
       id: "2",
       name: "Glam Zone",
       hero: "Where Glamour Begins",
+      image:
+        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       hero_description:
         "Step into a world of elegance and transformation. At Glam Zone, our professionals craft stunning hairstyles and looks that leave a lasting impression.",
       services_description:

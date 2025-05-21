@@ -9,4 +9,5 @@ export interface CenterInfo {
   address: string;
   phone: string;
   email: string;
+  image: string;
 }

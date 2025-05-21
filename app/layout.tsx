@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bella Beauty",
+  title: "Booking Beauty Center",
   description: "Expert Hair Styling Services",
 };
 

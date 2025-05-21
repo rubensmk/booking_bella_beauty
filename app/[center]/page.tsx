@@ -25,7 +25,7 @@ export default async function CenterPage({ params }: CenterPageProps) {
         hero={centerInfo.hero}
         hero_description={centerInfo.hero_description}
       />
-      <About about={centerInfo.about} />
+      <About about={centerInfo.about} image={centerInfo.image} />
 
       <section id="services" className="py-16 bg-beauty-light">
         <div className="container mx-auto px-4">

@@ -3,9 +3,10 @@ import React from "react";
 
 interface AboutProps {
   about: string;
+  image: string;
 }
 
-export default function About({ about }: AboutProps) {
+export default function About({ about, image }: AboutProps) {
   return (
     <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -116,7 +117,7 @@ export default function About({ about }: AboutProps) {
 
           <div className="relative w-full h-96 overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              src={image}
               alt="Hair Styling Service"
               fill
               className="object-cover rounded-lg"
